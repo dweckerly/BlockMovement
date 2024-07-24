@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1onrugmq7xop"]
+
+[ext_resource type="Shader" path="res://shaders/scroll.gdshader" id="1_1d3ci"]
+[ext_resource type="Texture2D" uid="uid://co6ee4mvjd6h8" path="res://assets/sinus_0_back.png" id="2_opvi7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jhixx"]
+shader = ExtResource("1_1d3ci")
+shader_parameter/x_speed = 0.1
+shader_parameter/y_speed = 0.1
+
+[node name="Background" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jhixx")
+position = Vector2(584, 336)
+scale = Vector2(1, 1.01944)
+texture = ExtResource("2_opvi7")

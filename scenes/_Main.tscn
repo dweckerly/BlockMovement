@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://cion861iw7ue3"]
+
+[ext_resource type="PackedScene" uid="uid://dj5jh2wgq0he2" path="res://scenes/Block.tscn" id="1_5hpuv"]
+[ext_resource type="Script" path="res://scenes/_Main.gd" id="1_pcisu"]
+[ext_resource type="PackedScene" uid="uid://b1onrugmq7xop" path="res://scenes/Background.tscn" id="3_fr2k3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nmos2"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_53dy2"]
+panorama = SubResource("CanvasTexture_nmos2")
+
+[sub_resource type="Sky" id="Sky_x8rg4"]
+sky_material = SubResource("PanoramaSkyMaterial_53dy2")
+
+[sub_resource type="Environment" id="Environment_44gkm"]
+background_mode = 3
+sky = SubResource("Sky_x8rg4")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 16.0
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_pcisu")
+
+[node name="Block" parent="." instance=ExtResource("1_5hpuv")]
+color = Color(1, 0.8, 0.129412, 1)
+
+[node name="Block2" parent="." instance=ExtResource("1_5hpuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Block3" parent="." instance=ExtResource("1_5hpuv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+color = Color(1, 0.8, 0.129412, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.601104, -0.483345, 0.636437, -1.04357e-08, 0.796372, 0.604808, -0.799171, -0.363552, 0.478702, 10.3224, 10.237, 7.73257)
+projection = 1
+size = 12.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_44gkm")
+
+[node name="Background" parent="WorldEnvironment" instance=ExtResource("3_fr2k3")]
