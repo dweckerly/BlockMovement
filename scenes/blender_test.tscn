@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tn4nimy01ttf"]
+
+[ext_resource type="PackedScene" uid="uid://rbot3ytkb0yd" path="res://assets/meshes/pawn.blend" id="1_wnejw"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="pawn" parent="." instance=ExtResource("1_wnejw")]
